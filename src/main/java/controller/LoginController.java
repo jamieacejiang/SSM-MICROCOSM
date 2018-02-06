@@ -126,115 +126,17 @@ public class LoginController {
 	public String toMyIndex(){
 		return "myIndex";
 	}
+
+	//TODO 此处echarts相关请求已迁移至echartsController
+
+	//TODO 此处关于测试的单表和多表的查询迁移至sqlOperateController
+
 	/**
-	 * 点击China Map按钮,跳转中国地图echarts页面
+	 * 跳转修改个人信息页面
 	 * @return
 	 */
-	@RequestMapping("/toChinaMap.do")
-	public String toChinaMap(){
-		return "chinaMap";
-	}
-	/**
-	 * 点击Map Study按钮,跳转地图学习echarts页面
-	 * @return
-	 */
-	@RequestMapping("/toMapStudy.do")
-	public String toMapStudy(){
-		return "mapStudy";
-	}
-	/**
-	 * 点击Line Study按钮,跳转折线图学习页面
-	 * @return
-	 */
-	@RequestMapping("/toLineStudy.do")
-	public String toLineStudy(){
-		return "lineStudy";
-	}
-	/**
-	 * 点击Bar Study按钮,跳转柱状图学习页面
-	 * @return
-	 */
-	@RequestMapping("/toBarStudy.do")
-	public String toBarStudy(){
-		return "barStudy";
-	}
-	/**
-	 * 点击Scatter Study按钮,跳转散点图学习页面
-	 * @return
-	 */
-	@RequestMapping("/toScatterStudy.do")
-	public String toScatterStudy(){
-		return "scatterStudy";
-	}
-	/**
-	 * 点击Scatter Study按钮,跳转散点图学习页面
-	 * @return
-	 */
-	@RequestMapping("/toPieStudy.do")
-	public String toPieStudy(){
-		return "pieStudy";
-	}
-	/**
-	 * 查询用户列表信息给前台bootstrap-table
-	 * @param username 用户名
-	 * @param password 密码
-	 * @param limit 页面大小
-	 * @param offset 页面大小起始值
-	 */
-	@RequestMapping("/queryUsers.do")
-	@ResponseBody//将messageresult返回值转成json输出
-	public JSONObject queryUsers(String username, String password,int limit, int offset){
-		//查询结果列表
-		List<User> resultList = new ArrayList<User>();
-		resultList = userService.queryPagerList(username, password,limit, offset);
-		JSONObject json = new JSONObject();
-        Integer total = userService.getTotal(username, password);
-        //bootstrap-table 返回格式必须包含rows和total
-        //JSONArray ja = JSONArray.parseArray(JSONObject.toJSONString(resultList));
-        //json.put("rows", ja);
-        json.put("rows", resultList);
-        json.put("total", total);
-        return json;
-    }
-	/**
-	 * 查询单个用户信息
-	 */
-	@RequestMapping("/queryBean.do")
-	@ResponseBody//将messageresult返回值转成json输出
-	public User queryBean(String id){
-		User u = new User();
-		u.setId(id);
-		User user = userService.queryBean(u);
-		return user;
-	}
-	/**
-	 * 更新用户信息操作
-	 * @param id
-	 * @param username 用户名
-	 * @param password 密码
-	 * @return
-	 */
-	@RequestMapping("/updateUser.do")
-	@ResponseBody//将messageresult返回值转成json输出
-	public MessageResult updateUser(String id, String username, String password){
-		User user = new User();
-		user.setId(id);
-		user.setUsername(username);
-		user.setPassword(password);
-		MessageResult result = userService.updateUser(user);
-		return result;
-	}
-	/**
-	 * 删除用户信息操作
-	 * @param id
-	 * @return
-	 */
-	@RequestMapping("/deleteUser.do")
-	@ResponseBody//将messageresult返回值转成json输出
-	public MessageResult deleteUser(String id){
-		User user = new User();
-		user.setId(id);
-		MessageResult result = userService.deleteUser(user);
-		return result;
+	@RequestMapping("/toEditPerMess.do")
+	public String toEditPerMess(){
+		return "editPerMess";
 	}
 }

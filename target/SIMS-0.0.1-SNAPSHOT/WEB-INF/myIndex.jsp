@@ -1,29 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 暂时先不做移动端折叠的导航条 -->
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">   -->
-<title>杰米儿姜的小宇宙</title>
-
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="top.jsp"%>
 
 <!-- bootstrap table组件引用 -->
-<link rel="stylesheet" href="css/bootstrap-table.min.css"/>
- 
-<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-<!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+<link rel="stylesheet" href="${path}/css/bootstrap-table.min.css"/>
 
 <!-- 引入bootstrap-editable编辑bootstrap-table -->
-<link rel="stylesheet" href="css/bootstrap-editable.css">
+<link rel="stylesheet" href="${path}/css/bootstrap-editable.css">
 
 <!-- 页面css文件的引用 -->
-<link rel="stylesheet" href="css/myIndex.css">
+<link rel="stylesheet" href="${path}/css/myIndex.css">
 
-</head>
-<body style="background-image:url(images/body-bg.png);background-repeat:repeat 0 0;display: block;overflow-x:hidden;overflow-y:auto;">
 <!-- 导航条 -->
 <div>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -39,20 +25,20 @@
 		    </div>
 		    <div class="collapse navbar-collapse" id="navigation">
 		        <ul class="nav navbar-nav">
-		            <li class="active"><a href="#">Index</a></li>
-		            <li><a href="#">friends</a></li>
+		            <li class="active"><a href="toMyIndex.do">Index</a></li>
+		            <li><a href="#">MultiTableOperate</a></li>
 		            <li><a href="#">Daily</a></li>
 		            <li class="dropdown">
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Echarts3 Study(echarts3学习)<b class="caret"></b></a>
-		                <ul class="dropdown-menu">
-		                    <li><a href="toLineStudy.do" target="_blank">Line Study(折线图学习)</a></li>
-		                    <li><a href="toBarStudy.do" target="_blank">Bar Study(柱状图学习)</a></li>
-		                    <li><a href="toScatterStudy.do" target="_blank">Scatter Study(散点图学习)</a></li>
-		                    <li><a href="toMapStudy.do" target="_blank">Map Study(地图学习)</a></li>
-		                    <li><a href="toPieStudy.do" target="_blank">Pie Study(饼图学习)</a></li>
-		                    <li class="divider"></li>
-		                    <li><a href="toChinaMap.do" target="_blank">china Map(中国地图)</a></li>
-		                </ul>
+                        <ul class="dropdown-menu">
+                            <li><a href="echartStudy/toLineStudy.do" target="_blank">Line Study(折线图学习)</a></li>
+                            <li><a href="echartStudy/toBarStudy.do" target="_blank">Bar Study(柱状图学习)</a></li>
+                            <li><a href="echartStudy/toScatterStudy.do" target="_blank">Scatter Study(散点图学习)</a></li>
+                            <li><a href="echartStudy/toMapStudy.do" target="_blank">Map Study(地图学习)</a></li>
+                            <li><a href="echartStudy/toPieStudy.do" target="_blank">Pie Study(饼图学习)</a></li>
+                            <li class="divider"></li>
+                            <li><a href="echartStudy/toChinaMap.do" target="_blank">china Map(中国地图)</a></li>
+                        </ul>
 		            </li>
 		        </ul>
 		        <ul class="nav navbar-nav navbar-right"> 
@@ -60,7 +46,7 @@
 		                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span>设置</a></a>
 		                <ul class="dropdown-menu">
 		                    <li><a href="#">更换主题</a></li>
-		                    <li><a href="http://news.sina.com.cn/" target="_blank">修改个人信息</a></li>
+		                    <li><a href="toEditPerMess.do">修改个人信息</a></li>
 		                    <li><a href="http://www.gexing.com/" target="_blank">其他</a></li>
 		                    <li class="divider"></li>
 		                    <li><a href="logout.do" target="_blank">退出登录</a></li>
@@ -99,19 +85,8 @@
                 </div>
             </form>
         </div>
-    </div>       
+    </div>
 
-    <!-- <div id="toolbar" class="btn-group">
-        <button id="btn_add" type="button" class="btn btn-default" data-toggle="modal" data-target="#addModal">
-        	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
-        </button>
-        <button id="btn_edit" type="button" class="btn btn-default" data-toggle="modal" data-target="#editModal">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
-        </button>
-        <button id="btn_delete" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
-        </button>
-    </div> -->
     <table id="tb_user">
     </table>
 </div>
@@ -194,27 +169,20 @@
 	</div>
 </div>
 
-</body>
-
-<!-- jQuery文件，务必在bootstrap.min.js 之前引入 --> 
-<script src="js/jquery.min.js"></script>
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="js/bootstrap.min.js"></script>
 
 <!-- bootstrap table组件以及中文包的引用 -->
-<script src="js/bootstrap-table.min.js"></script>
-<script src="js/bootstrap-table-zh-CN.min.js"></script>
+<script src="${path}/js/bootstrap-table.min.js"></script>
+<script src="${path}/js/bootstrap-table-zh-CN.min.js"></script>
 
 <!-- bootstrap table扩展的bootstrap-editable引用 -->
-<script src="js/bootstrap-editable.js"></script>
-<script src="js/bootstrap-table-editable.js"></script>
+<script src="${path}/js/bootstrap-editable.js"></script>
+<script src="${path}/js/bootstrap-table-editable.js"></script>
 
 <!-- 引入export相关js文件 -->
-<script src="js/bootstrap-table-export.js"></script>
-<script src="js/tableExport.js"></script>
+<script src="${path}/js/bootstrap-table-export.js"></script>
+<script src="${path}/js/tableExport.js"></script>
 
 
 <!-- 页面Js文件的引用 -->
-<script src="js/myIndex.js"></script>
-</html>
+<script src="${path}/js/myIndex.js"></script>
+<%@include file="bottom.jsp"%>

@@ -92,7 +92,7 @@ $('#editBtn').click(function(){
 	//序列化中文以及字符时会出现乱码，是因为.serialize()调用了encodeURLComponent方法将数据编码了
 	//解决方法：**调用decodeURIComponent(XXX,true);将数据解码 
 	$.ajax({
-		url:'updateUser.do',
+		url:'sqlOperate/updateUser.do',
 		data:submitData,
 		method: 'post',                      //请求方式（*）
 		dataType:'json',
@@ -129,7 +129,7 @@ $('#editBtn').click(function(){
 $('#delBtn').click(function(){
 	var submitData = 'id='+$('#delId').val()+'&rd='+Math.random();
 	$.ajax({
-		url:'deleteUser.do',
+		url:'sqlOperate/deleteUser.do',
 		data:submitData,
 		method: 'post',
 		dataType:'json',
@@ -167,7 +167,7 @@ $('#delBtn').click(function(){
 function initTable() {
 		$('#tb_user').bootstrapTable('destroy');
         $('#tb_user').bootstrapTable({
-            url: 'queryUsers.do',         //请求后台的URL（*）
+            url: 'sqlOperate/queryUsers.do',         //请求后台的URL（*）
             method: 'get',                      //请求方式（*）
             //toolbar: '#toolbar',                //工具按钮用哪个容器
             striped: true,                      //是否显示行间隔色
@@ -327,7 +327,7 @@ function openEditModal(id){
 	//submitData是解码后的表单数据，结果同上
 	var submitData=decodeURIComponent(data,true);
 	$.ajax({
-		url:'queryBean.do',
+		url:'sqlOperate/queryBean.do',
 		data:submitData,
 		dataType:'json',
 		cache:false,//false是不缓存此页面，true为缓存,cache的作用就是第一次请求完毕之后，如果再次去请求，可以直接从缓存里面读取而不是再到服务器端读取。

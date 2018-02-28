@@ -3,6 +3,7 @@ package controller;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -22,6 +24,8 @@ import service.UserService;
 import util.ImageUtil;
 import entity.MessageResult;
 import entity.User;
+import util.SIMSUtil;
+
 @Controller
 public class LoginController {
 	@Autowired
@@ -43,7 +47,15 @@ public class LoginController {
 		}
 		User user = new User();
 		user.setUsername(username);
-		user.setPassword(password);
+		//将用户输入的password再加密，与数据库比对
+		String md5_password = "";
+		try {
+			md5_password = SIMSUtil.md5(password);
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		user.setPassword(md5_password);
 		MessageResult result = userService.checkLogin(user);
 		//如果登陆成功
 		if(result.getStatus()==0){
@@ -136,7 +148,13 @@ public class LoginController {
 	 * @return
 	 */
 	@RequestMapping("/toEditPerMess.do")
-	public String toEditPerMess(){
+	public String toEditPerMess(HttpSession session){
+		User user = (User)session.getAttribute("user");
+		User u = new User();
+		u.setId(user.getId());
+		user = userService.queryBean(u);
+		//request.setAttribute("user1",user);
+		session.setAttribute("user",user);
 		return "editPerMess";
 	}
 }

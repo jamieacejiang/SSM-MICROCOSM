@@ -1,3 +1,11 @@
+/*更改bootstrap默认按钮选中后focus样式*/
+.btn:focus, .btn.focus, .btn:active:focus,.btn:active.focus, .btn.active:focus, .btn.active.focus, input:focus, input:active, select:focus, select:active:focus
+{
+    outline:none;
+    box-shadow:none;
+}
+
+/*验证码*/
 #checkCode {
 	width:75%;
 	height: 34px;

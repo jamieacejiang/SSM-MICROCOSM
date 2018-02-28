@@ -8,48 +8,48 @@ import entity.User;
 
 public interface UserDao {
 	/**
-	 * 
+	 * 通过username查询单个user实体
 	 * @param username
 	 * @return
 	 */
 	public User findUserByUsername(String username);
 
 	/**
-	 * 
+	 * 新增
 	 * @param user1
 	 */
 	public void addUser(User user1);
 
 	/**
-	 * 
+	 * 查询结果列表
 	 * @param map
 	 * @return
 	 */
 	public List<User> queryPagerList(Map <String,Object> map);
 
 	/**
-	 * 
+	 * 获得查询总条数
 	 * @param user
 	 * @return
 	 */
 	public Integer getTotal(User user);
 	
 	/**
-	 * 
+	 * 查询单个user实体
 	 * @param user
 	 * @return
 	 */
 	public User queryBean(User user);
 
 	/**
-	 * 
+	 * 更新
 	 * @param user
 	 * @return
 	 */
 	public void updateUser(User user);
 
 	/**
-	 * 
+	 * 删除
 	 * @param user
 	 */
 	public void deleteUser(User user);

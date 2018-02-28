@@ -61,7 +61,7 @@
 		
 		<select id="queryBean" parameterType="entity.User" resultType="entity.User">
 			select 
-				 id,username,password,sts 
+				 id,username,password,sts,nickname,email,person_sign,registe_time,login_ip,role_id,birth
 			from 
 				user
 			where 
@@ -78,7 +78,24 @@
 			<if test="sts != null and sts != '' ">
 				and sts=#{sts}
 			</if>
-				
+			<if test="nickname != null and nickname!= '' ">
+				and nickname = #{nickname}
+			</if>
+			<if test="email != null and email!= '' ">
+				and email = #{email}
+			</if>
+			<if test="person_sign != null and person_sign!= '' ">
+				and person_sign = #{person_sign}
+			</if>
+			<if test="registe_time != null and registe_time!= '' ">
+				and registe_time = #{registe_time}
+			</if>
+			<if test="login_ip != null and login_ip!= '' ">
+				and login_ip = #{login_ip}
+			</if>
+			<if test="birth != null and birth!= '' ">
+				and birth = #{birth}
+			</if>
 			
 		</select>
 		
@@ -96,6 +113,24 @@
 				</if>
 				<if test="sts != null and sts!= '' ">
 					sts = #{sts}, 
+				</if>
+				<if test="nickname != null and nickname!= '' ">
+					nickname = #{nickname},
+				</if>
+				<if test="email != null and email!= '' ">
+					email = #{email},
+				</if>
+				<if test="person_sign != null and person_sign!= '' ">
+					person_sign = #{person_sign},
+				</if>
+				<if test="registe_time != null and registe_time!= '' ">
+					registe_time = #{registe_time},
+				</if>
+				<if test="login_ip != null and login_ip!= '' ">
+					login_ip = #{login_ip},
+				</if>
+				<if test="birth != null and birth!= '' ">
+					birth = #{birth},
 				</if>
 			</set>
 			where id = #{id} and sts='A'

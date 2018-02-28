@@ -54,17 +54,29 @@ public class sqlOperateController {
     /**
      * 更新用户信息操作
      * @param id
-     * @param username 用户名
-     * @param password 密码
+     * @param username
+     * @param password
+     * @param nickname
+     * @param birth
+     * @param email
+     * @param person_sign
+     * @param registe_time
+     * @param login_ip
      * @return
      */
     @RequestMapping("/updateUser.do")
     @ResponseBody//将messageresult返回值转成json输出
-    public MessageResult updateUser(String id, String username, String password){
+    public MessageResult updateUser(String id, String username, String password, String nickname, String birth, String email, String person_sign, String registe_time, String login_ip){
         User user = new User();
         user.setId(id);
         user.setUsername(username);
         user.setPassword(password);
+        user.setNickname(nickname);
+        user.setBirth(birth);
+        user.setEmail(email);
+        user.setPerson_sign(person_sign);
+        user.setRegiste_time(registe_time);
+        user.setLogin_ip(login_ip);
         MessageResult result = userService.updateUser(user);
         return result;
     }

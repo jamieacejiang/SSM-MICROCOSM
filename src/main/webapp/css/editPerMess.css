@@ -1,0 +1,225 @@
+/*更改bootstrap默认按钮选中后focus样式*/
+.btn:focus, .btn.focus, .btn:active:focus,.btn:active.focus, .btn.active:focus, .btn.active.focus, input:focus, input:active, select:focus, select:active:focus
+{
+    outline:none;
+    box-shadow:none;
+}
+
+/*上传头像相关样式*/
+.box{
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.box:before{
+    content: "";
+    width: 0;
+    height: 100%;
+    background: #000;
+    padding: 14px 18px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transition: all 300ms cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+}
+.box:hover:before{
+    width: 100%;
+    left: 0;
+    opacity: 0.5;
+}
+.box img{
+    width: 100%;
+    height: auto;
+}
+.box .box-content{
+    width: 100%;
+    padding: 14px 18px;
+    color: #fff;
+    position: absolute;
+    top: 38%;
+    left: 0;
+}
+.box .title{
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 0;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.box .post{
+    font-size: 15px;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+.box:hover .title,
+.box:hover .post{
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+.box .icon{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+.box .icon li{
+    display: inline-block;
+}
+.box .icon li a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #f74e55;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-right: 5px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s ease 0s;
+}
+.box:hover .icon li a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.1s;
+}
+/*  .box:hover .icon li:last-child a{
+    transition-delay: 0.8s;
+  }*/
+/*@media only screen and (max-width:990px){
+    .box{ margin-bottom: 30px; }
+}*/
+
+
+
+
+
+
+
+body {
+    background-color: #fcfcfc;
+}
+
+.avatar-view {
+    display: block;
+    margin: 15% auto 5%;
+    height: 220px;
+    width: 220px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.15);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.avatar-view img {
+    width: 100%;
+}
+
+.avatar-body {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.avatar-upload {
+    overflow: hidden;
+}
+
+.avatar-upload label {
+    display: block;
+    float: left;
+    clear: left;
+    width: 100px;
+}
+
+.avatar-upload input {
+    display: block;
+    /*margin-left: 110px;*/
+}
+
+.avatar-alert {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar-wrapper {
+    height: 364px;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.25);
+    background-color: #fcfcfc;
+    overflow: hidden;
+}
+
+.avatar-wrapper img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.avatar-preview {
+    float: left;
+    margin-top: 15px;
+    margin-right: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.avatar-preview:hover {
+    border-color: #ccf;
+    box-shadow: 0 0 5px rgba(0,0,0,.15);
+}
+
+.avatar-preview img {
+    width: 100%;
+}
+
+.preview-lg {
+    height: 184px;
+    width: 184px;
+    margin-top: 15px;
+}
+
+.preview-md {
+    height: 100px;
+    width: 100px;
+}
+
+.preview-sm {
+    height: 50px;
+    width: 50px;
+}
+
+@media (min-width: 992px) {
+    .avatar-preview {
+        float: none;
+    }
+}
+
+.avatar-btns {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.avatar-btns .btn-group {
+    margin-right: 5px;
+}
+
+.loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //background: #fff url("../images/loading.gif") no-repeat center center;
+    opacity: .75;
+    filter: alpha(opacity=75);
+    z-index: 20140628;
+}

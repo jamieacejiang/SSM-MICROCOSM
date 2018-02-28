@@ -27,29 +27,22 @@ public class UserServiceImpl implements UserService{
 	
 	public MessageResult checkLogin(User user){
 		MessageResult result = new MessageResult();
-		User user1 = userDao.findUserByUsername(user.getUsername());
+		//User user1 = userDao.findUserByUsername(user.getUsername());
+		User user1 = userDao.queryBean(user);
 		if(user1 == null){
 			result.setStatus(1);
 			result.setMsg("账号不存在！");
 			return result;
 		}
-		//将用户输入的password再加密，与数据库比对
-		String md5_password = "";
-		try {
-			md5_password = SIMSUtil.md5(user.getPassword());
-		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		//与数据库密码比对
-		if(!user1.getPassword().equals(md5_password)){
+		if(!user1.getPassword().equals(user.getPassword())){
 			result.setStatus(2);
 			result.setMsg("密码错误！");
 			return result;
 		}
 		result.setStatus(0);
 		result.setMsg("登陆成功！");
-		result.setData(user);//返回用户名
+		result.setData(user1);//返回用户
 		return result;
 	}
 

@@ -1,17 +1,11 @@
 package service;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -141,5 +135,29 @@ public class UserServiceImpl implements UserService{
 		result.setMsg("删除成功！");
 		return result;
 	}
+
+    public List<User> queryUserRoleList(String username, String roleId, int limit, int offset) {
+        //parametertype传多个参数,所以用map封装一下
+        Map <String,Object> map =new HashMap<String,Object>();
+        map.put("username", username);
+        map.put("roleId", roleId);
+        //由于在mysql中*有问题所以提前计算下
+        if((offset!=-1)&&(limit!=-1)){
+            offset = offset-limit+limit;
+        }
+        map.put("offset", offset);
+        map.put("limit", limit);
+        List<User> resultList = userDao.queryUserRoleList(map);
+        return resultList;
+    }
+
+    public Integer getUserRoleTotal(String username, String roleId) {
+        //parametertype传多个参数,所以用map封装一下
+        Map <String,Object> map =new HashMap<String,Object>();
+        map.put("username", username);
+        map.put("roleId", roleId);
+        Integer total = userDao.getUserRoleTotal(map);
+        return total;
+    }
 
 }

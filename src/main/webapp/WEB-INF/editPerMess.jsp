@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navigation">
                 <ul class="nav navbar-nav">
                     <li><a href="toMyIndex.do">Index</a></li>
-                    <li><a href="#">MultiTableOperate</a></li>
+                    <li><a href="multiTable/toMultiTableIndex.do">MultiTableOperate</a></li>
                     <li><a href="#">Daily</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Echarts3 Study(echarts3学习)<b class="caret"></b></a>
@@ -98,8 +98,8 @@
                     <input type="email" class="form-control" id="txt_email" name="email" placeholder="Email address" value="${user.email}">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">个性签名(Individuality signature)</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="person_sign" placeholder="Individuality signature" value="${user.person_sign}">
+                    <label for="txt_personSign">个性签名(Individuality signature)</label>
+                    <input type="text" class="form-control" id="txt_personSign" name="personSign" placeholder="Individuality signature" value="${user.personSign}">
                 </div>
                 <%--<div class="checkbox">
                     <label>

@@ -53,4 +53,25 @@ public interface UserDao {
 	 * @param user
 	 */
 	public void deleteUser(User user);
+
+	/**
+	 * 查询角色表列表
+	 *
+	 * @return 返回查询的角色表列表
+	 */
+    public List getRoleList();
+
+	/**
+	 * 关联查询用户角色列表信息
+	 * @param map
+	 * @return
+	 */
+	List<User> queryUserRoleList(Map<String, Object> map);
+
+	/**
+	 * 查询用户角色列表信息总条数
+	 * @param map
+	 * @return
+	 */
+	Integer getUserRoleTotal(Map<String, Object> map);
 }

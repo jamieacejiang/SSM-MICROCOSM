@@ -16,14 +16,19 @@ public class User implements Serializable{
 	//邮箱
 	private String email;
 	//个性签名
-	private String person_sign;
+	private String personSign;
 	//注册时间
-	private String registe_time;
+	private String registeTime;
 	//最后一次登录ip地址
-	private String login_ip;
+	private String loginIp;
+	//角色ID
+	private String roleId;
 	//生日
 	private String birth;
-	
+	//角色
+	private Role role;
+
+
 	public String getUsername() {
 		return username;
 	}
@@ -65,28 +70,36 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
-	public String getPerson_sign() {
-		return person_sign;
+	public String getPersonSign() {
+		return personSign;
 	}
 
-	public void setPerson_sign(String person_sign) {
-		this.person_sign = person_sign;
+	public void setPersonSign(String personSign) {
+		this.personSign = personSign;
 	}
 
-	public String getRegiste_time() {
-		return registe_time;
+	public String getRegisteTime() {
+		return registeTime;
 	}
 
-	public void setRegiste_time(String registe_time) {
-		this.registe_time = registe_time;
+	public void setRegisteTime(String registeTime) {
+		this.registeTime = registeTime;
 	}
 
-	public String getLogin_ip() {
-		return login_ip;
+	public String getLoginIp() {
+		return loginIp;
 	}
 
-	public void setLogin_ip(String login_ip) {
-		this.login_ip = login_ip;
+	public void setLoginIp(String loginIp) {
+		this.loginIp = loginIp;
+	}
+
+	public String getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
 	}
 
 	public String getBirth() {
@@ -97,10 +110,29 @@ public class User implements Serializable{
 		this.birth = birth;
 	}
 
-	@Override
-	public String toString() {
-		return "id=" + id + ", username=" + username + ", password="
-				+ password + ", sts=" + sts;
+	public Role getRole() {
+		return role;
 	}
-	
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", sts='" + sts + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", email='" + email + '\'' +
+                ", personSign='" + personSign + '\'' +
+                ", registeTime='" + registeTime + '\'' +
+                ", loginIp='" + loginIp + '\'' +
+                ", roleId='" + roleId + '\'' +
+                ", birth='" + birth + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }

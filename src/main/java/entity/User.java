@@ -25,6 +25,11 @@ public class User implements Serializable{
 	private String roleId;
 	//生日
 	private String birth;
+	//头像名
+	private String photoSrc;
+
+
+
 	//角色
 	private Role role;
 
@@ -110,6 +115,14 @@ public class User implements Serializable{
 		this.birth = birth;
 	}
 
+	public String getPhotoSrc() {
+		return photoSrc;
+	}
+
+	public void setPhotoSrc(String photoSrc) {
+		this.photoSrc = photoSrc;
+	}
+
 	public Role getRole() {
 		return role;
 	}
@@ -118,21 +131,22 @@ public class User implements Serializable{
 		this.role = role;
 	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", sts='" + sts + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", email='" + email + '\'' +
-                ", personSign='" + personSign + '\'' +
-                ", registeTime='" + registeTime + '\'' +
-                ", loginIp='" + loginIp + '\'' +
-                ", roleId='" + roleId + '\'' +
-                ", birth='" + birth + '\'' +
-                ", role=" + role +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "User{" +
+				"id='" + id + '\'' +
+				", username='" + username + '\'' +
+				", password='" + password + '\'' +
+				", sts='" + sts + '\'' +
+				", nickname='" + nickname + '\'' +
+				", email='" + email + '\'' +
+				", personSign='" + personSign + '\'' +
+				", registeTime='" + registeTime + '\'' +
+				", loginIp='" + loginIp + '\'' +
+				", roleId='" + roleId + '\'' +
+				", birth='" + birth + '\'' +
+				", photoSrc='" + photoSrc + '\'' +
+				", role=" + role +
+				'}';
+	}
 }

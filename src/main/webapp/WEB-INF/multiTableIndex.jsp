@@ -86,7 +86,6 @@
                  <div class="col-sm-1"></div>
                  <div class="col-sm-3" style="text-align:left;">
                      <button type="button" id="btn_query" class="btn btn-primary">查询</button>
-                     <button type="button" id="btn_add" class="btn btn-primary"  data-toggle="modal" data-target="#addModal">新增</button>
                      <button type="button" id="btn_reset" class="btn btn-primary">清除</button>
                  </div>
              </div>

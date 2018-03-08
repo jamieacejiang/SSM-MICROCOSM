@@ -74,7 +74,6 @@ public class sqlOperateController {
         user.setNickname(nickname);
         user.setBirth(birth);
         user.setEmail(email);
-        //TODO
         user.setPersonSign(personSign);
         user.setRegisteTime(registeTime);
         user.setLoginIp(loginIp);

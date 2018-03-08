@@ -16,6 +16,7 @@
             <result column="login_ip" property="loginIp"></result>
             <result column="role_id" property="roleId"></result>
             <result column="birth" property="birth"></result>
+			<result column="photo_src" property="photoSrc"></result>
             <association property="role" javaType="entity.Role">
                 <id column="role_id" property="roleId" jdbcType="INTEGER"></id>
                 <result column="role_name" property="roleName" jdbcType="VARCHAR"></result>
@@ -66,6 +67,9 @@
 				<if test="birth != null and birth!= '' ">
 					birth = #{birth},
 				</if>
+				<if test="photoSrc != null and photoSrc!= '' ">
+					photo_src = #{photoSrc},
+				</if>
 			</set>
 			where id = #{id} and sts='A'
 		</update>
@@ -108,7 +112,7 @@
 		
 		<select id="queryBean" parameterType="entity.User" resultMap="userClassMap">
 			select 
-				 id,username,password,sts,nickname,email,person_sign,registe_time,login_ip,role_id,birth
+				 id,username,password,sts,nickname,email,person_sign,registe_time,login_ip,role_id,birth,photo_src
 			from 
 				user
 			where 
@@ -146,6 +150,9 @@
 			<if test="birth != null and birth!= '' ">
 				and birth = #{birth}
 			</if>
+			<if test="photoSrc != null and photoSrc!= '' ">
+				and photo_src = #{photoSrc}
+			</if>
 			
 		</select>
 
@@ -161,11 +168,11 @@
 		</select>
 
 		<select id="queryUserRoleList" parameterType="Map" resultMap="userClassMap">
-			select b.id,b.username,b.nickname,b.email,b.person_sign,b.registe_time,b.role_id,b.birth,a.role_name
+			select b.id,b.username,b.nickname,b.email,b.person_sign,b.registe_time,b.role_id,b.birth,b.photo_src,a.role_name
 			from role a, user b
 			where b.role_id=a.role_id and a.sts='A' and b.sts='A'
 			<if test="username != null and username!= '' ">
-				and b.username like concat('%',#{b.username},'%')
+				and b.username like concat('%',#{username},'%')
 			</if>
 			<if test="roleId != null and roleId != '' ">
 				and b.role_id = #{roleId}
@@ -181,7 +188,7 @@
 			from role a, user b
 			where b.role_id=a.role_id and a.sts='A' and b.sts='A'
 			<if test="username != null and username != '' ">
-				and b.username like concat('%',#{b.username},'%')
+				and b.username like concat('%',#{username},'%')
 			</if>
 			<if test="roleId != null and roleId != '' ">
 				and b.role_id = #{roleId}

@@ -3,18 +3,25 @@
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 	<mapper namespace="dao.UserDao">
-	
-	
-		<select id="findUserByUsername" parameterType="string" resultType="entity.User">
-			select 
-				 username,password 
-			from 
-				user
-			where 
-				sts='A'
-				and username=#{username}
-			
-		</select>
+
+        <resultMap type="entity.User" id="userClassMap">
+            <id column="id" property="id"></id>
+            <result column="username" property="username"></result>
+            <result column="password" property="password"></result>
+            <result column="sts" property="sts"></result>
+            <result column="nickname" property="nickname"></result>
+            <result column="email" property="email"></result>
+            <result column="person_sign" property="personSign"></result>
+            <result column="registe_time" property="registeTime"></result>
+            <result column="login_ip" property="loginIp"></result>
+            <result column="role_id" property="roleId"></result>
+            <result column="birth" property="birth"></result>
+			<result column="photo_src" property="photoSrc"></result>
+            <association property="role" javaType="entity.Role">
+                <id column="role_id" property="roleId" jdbcType="INTEGER"></id>
+                <result column="role_name" property="roleName" jdbcType="VARCHAR"></result>
+            </association>
+        </resultMap>
 		
 		<insert id="addUser" parameterType="entity.User" >
 			insert into user 
@@ -23,6 +30,49 @@
 				(#{username},#{password},'A')
 	 		
 		</insert>
+
+		<update id="updateUser" parameterType="entity.User">
+			update user
+			<set>
+				<if test="id != null and id!= '' ">
+					id = #{id},
+				</if>
+				<if test="username != null and username!= '' ">
+					username = #{username},
+				</if>
+				<if test="password != null and password!= '' ">
+					password = #{password},
+				</if>
+				<if test="sts != null and sts!= '' ">
+					sts = #{sts},
+				</if>
+				<if test="nickname != null and nickname!= '' ">
+					nickname = #{nickname},
+				</if>
+				<if test="email != null and email!= '' ">
+					email = #{email},
+				</if>
+				<if test="personSign != null and personSign!= '' ">
+					person_sign = #{personSign},
+				</if>
+				<if test="registeTime != null and registeTime!= '' ">
+					registe_time = #{registeTime},
+				</if>
+				<if test="loginIp != null and loginIp!= '' ">
+					login_ip = #{loginIp},
+				</if>
+                <if test="roleId != null and roleId!= '' ">
+                    role_id = #{roleId},
+                </if>
+				<if test="birth != null and birth!= '' ">
+					birth = #{birth},
+				</if>
+				<if test="photoSrc != null and photoSrc!= '' ">
+					photo_src = #{photoSrc},
+				</if>
+			</set>
+			where id = #{id} and sts='A'
+		</update>
 		
 		<select id="queryPagerList" parameterType="Map" resultType="entity.User">
 			select 
@@ -37,6 +87,7 @@
 			<if test="password != null and password!= ''">
 				 and password = #{password}
 			</if>
+            order by id
 			<if test="limit != '-1' and offset != '-1' ">
 			limit #{offset},#{limit}
 			</if>
@@ -59,9 +110,9 @@
 			
 		</select>
 		
-		<select id="queryBean" parameterType="entity.User" resultType="entity.User">
+		<select id="queryBean" parameterType="entity.User" resultMap="userClassMap">
 			select 
-				 id,username,password,sts,nickname,email,person_sign,registe_time,login_ip,role_id,birth
+				 id,username,password,sts,nickname,email,person_sign,registe_time,login_ip,role_id,birth,photo_src
 			from 
 				user
 			where 
@@ -84,58 +135,66 @@
 			<if test="email != null and email!= '' ">
 				and email = #{email}
 			</if>
-			<if test="person_sign != null and person_sign!= '' ">
-				and person_sign = #{person_sign}
+			<if test="personSign != null and personSign!= '' ">
+				and person_sign = #{personSign}
 			</if>
-			<if test="registe_time != null and registe_time!= '' ">
-				and registe_time = #{registe_time}
+			<if test="registeTime != null and registeTime!= '' ">
+				and registe_time = #{registeTime}
 			</if>
-			<if test="login_ip != null and login_ip!= '' ">
-				and login_ip = #{login_ip}
+			<if test="loginIp != null and loginIp!= '' ">
+				and login_ip = #{loginIp}
 			</if>
+            <if test="roleId != null and roleId!= '' ">
+                and role_id = #{roleId}
+            </if>
 			<if test="birth != null and birth!= '' ">
 				and birth = #{birth}
 			</if>
+			<if test="photoSrc != null and photoSrc!= '' ">
+				and photo_src = #{photoSrc}
+			</if>
 			
 		</select>
-		
-		<update id="updateUser" parameterType="entity.User">
-			update user
-			<set>
-				<if test="id != null and id!= '' ">
-					id = #{id},  
-				</if>
-				<if test="username != null and username!= '' ">
-					username = #{username},  
-				</if>
-				<if test="password != null and password!= '' ">
-					password = #{password},  
-				</if>
-				<if test="sts != null and sts!= '' ">
-					sts = #{sts}, 
-				</if>
-				<if test="nickname != null and nickname!= '' ">
-					nickname = #{nickname},
-				</if>
-				<if test="email != null and email!= '' ">
-					email = #{email},
-				</if>
-				<if test="person_sign != null and person_sign!= '' ">
-					person_sign = #{person_sign},
-				</if>
-				<if test="registe_time != null and registe_time!= '' ">
-					registe_time = #{registe_time},
-				</if>
-				<if test="login_ip != null and login_ip!= '' ">
-					login_ip = #{login_ip},
-				</if>
-				<if test="birth != null and birth!= '' ">
-					birth = #{birth},
-				</if>
-			</set>
-			where id = #{id} and sts='A'
-		</update>
-		
+
+		<select id="findUserByUsername" parameterType="string" resultType="entity.User">
+			select
+			username,password
+			from
+			user
+			where
+			sts='A'
+			and username=#{username}
+
+		</select>
+
+		<select id="queryUserRoleList" parameterType="Map" resultMap="userClassMap">
+			select b.id,b.username,b.nickname,b.email,b.person_sign,b.registe_time,b.role_id,b.birth,b.photo_src,a.role_name
+			from role a, user b
+			where b.role_id=a.role_id and a.sts='A' and b.sts='A'
+			<if test="username != null and username!= '' ">
+				and b.username like concat('%',#{username},'%')
+			</if>
+			<if test="roleId != null and roleId != '' ">
+				and b.role_id = #{roleId}
+			</if>
+			ORDER BY b.id
+			<if test="limit != '-1' and offset != '-1' ">
+				limit #{offset},#{limit}
+			</if>
+		</select>
+
+		<select id="getUserRoleTotal" parameterType="Map" resultType="Integer">
+			select count(*)
+			from role a, user b
+			where b.role_id=a.role_id and a.sts='A' and b.sts='A'
+			<if test="username != null and username != '' ">
+				and b.username like concat('%',#{username},'%')
+			</if>
+			<if test="roleId != null and roleId != '' ">
+				and b.role_id = #{roleId}
+			</if>
+			ORDER BY b.id
+		</select>
 	</mapper>
 
 

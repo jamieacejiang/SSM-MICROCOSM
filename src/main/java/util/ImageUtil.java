@@ -10,6 +10,9 @@ import java.io.OutputStream;
 import java.util.Random;
 import javax.imageio.ImageIO;
 
+/**
+ * 生成验证码工具类
+ */
 public final class ImageUtil {
 	
 	// 验证码字符集

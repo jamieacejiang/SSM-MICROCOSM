@@ -164,25 +164,27 @@ $('#avatar-modal').modal({
 
 
 
-
+//jQuery加载模式(不懂,暂时大概了解皮毛就可以了，属于前端的模块开发)
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
-        // AMD. Register as anonymous module.
+        // AMD. Register as anonymous module.(AMD模式.注册为匿名模块)
         define(['jquery'], factory);
     } else if (typeof exports === 'object') {
-        // Node / CommonJS
+        // Node / CommonJS模式
         factory(require('jquery'));
     } else {
-        // Browser globals.
+        // Browser globals.(全局模式)
         factory(jQuery);
     }
-})(function ($) {
+})(function ($) {//使用Require.js加载一个jQuery插件：
 
-    'use strict';
-
-    var console = window.console || { log: function () {} };
+    'use strict';//表示强规则
+    ////兼容Firefox/IE/Opera使用console.log
+    var console = window.console || { log: function () {} };//打印控制台信息,方便观察成功或出错信息
+    //之后，执行括号里最下面的$(function(){...})
 
     function CropAvatar($element) {
+        //把刚刚那个container赋值给这个jQuery元素，下面依次类推，全是有的就赋值
         this.$container = $element;
 
         this.$avatarView = this.$container.find('.box');
@@ -201,18 +203,21 @@ $('#avatar-modal').modal({
         this.$avatarWrapper = this.$avatarModal.find('.avatar-wrapper');
         this.$avatarPreview = this.$avatarModal.find('.avatar-preview');
 
-        this.init();
+        this.init();//把这个包含了这么多jQuery元素的this进行初始化
     }
-
+    //裁剪对象原型={}  {}相当于一个object(对象)
     CropAvatar.prototype = {
-        constructor: CropAvatar,
+        constructor: CropAvatar,//构造，和上面init走的一个方法
 
+        //jQuery.support 属性包含表示不同浏览器特性或漏洞的属性集。
         support: {
-            fileList: !!$('<input type="file">').prop('files'),
+            //!!表示"非非"，即返回一个布尔值，true或false
+            fileList: !!$('<input type="file">').prop('files'),//prop() 方法设置或返回被选元素的属性和值。
             blobURLs: !!window.URL && URL.createObjectURL,
             formData: !!window.FormData
         },
 
+        //初始化
         init: function () {
             this.support.datauri = this.support.fileList && this.support.blobURLs;
 
@@ -400,6 +405,7 @@ $('#avatar-modal').modal({
         ajaxUpload: function () {
             var url = this.$avatarForm.attr('action');
             var data = new FormData(this.$avatarForm[0]);
+            console.log(data);
             var _this = this;
 
             $.ajax(url, {
@@ -437,10 +443,9 @@ $('#avatar-modal').modal({
 
         submitDone: function (data) {
             console.log(data);
-
-            if ($.isPlainObject(data) && data.state === 200) {
-                if (data.result) {
-                    this.url = data.result;
+            if ($.isPlainObject(data) && data.status === 0) {
+                if (data.data) {
+                    this.url = data.data;
 
                     if (this.support.datauri || this.uploaded) {
                         this.uploaded = false;
@@ -450,13 +455,12 @@ $('#avatar-modal').modal({
                         this.$avatarSrc.val(this.url);
                         this.startCropper();
                     }
-
                     this.$avatarInput.val('');
                 } else if (data.message) {
                     this.alert(data.message);
                 }
             } else {
-                this.alert('Failed to response');
+                this.alert('上传失败！');
             }
         },
 
@@ -470,7 +474,10 @@ $('#avatar-modal').modal({
 
         cropDone: function () {
             this.$avatarForm.get(0).reset();
-            this.$avatar.attr('src', this.url);
+            //如果图片存在项目路径下的文件夹中可以如此获取即可替换原src图片
+            //this.$avatar.attr('src', this.url);
+            //如果图片存在服务器的其他地方
+            this.$avatar.attr('src', "upload/downloadPhoto.do?fileName="+this.url);
             this.stopCropper();
             this.$avatarModal.modal('hide');
         },
@@ -487,6 +494,7 @@ $('#avatar-modal').modal({
         }
     };
 
+    //返回页面中id为crop-avatar的元素给CropAvatar这个方法
     $(function () {
         return new CropAvatar($('#crop-avatar'));
     });

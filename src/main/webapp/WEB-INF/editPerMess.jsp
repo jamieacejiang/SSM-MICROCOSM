@@ -73,7 +73,7 @@
                     </div>--%>
                     <%--<img src="${path}/images/testProfilePhoto.jpg" width="100%" height="100%" id="profilePhoto" >--%>
                     <div class="box" style="border-radius:89px">
-                        <img class="img-circle" id="image" style="width: 178px;" src="${path}/images/testProfilePhoto.jpg" >
+                        <img class="img-circle" id="image" style="width: 178px;" src="upload/downloadPhoto.do?fileName=${user.photoSrc}" >
                         <div class="box-content">
                             <span class="title"><a href="javascript:void(sDialog());" class="btn btn-danger" >上传头像</a></span>
                         </div>
@@ -128,6 +128,7 @@
                             <div class="avatar-upload">
                                 <input type="hidden" class="avatar-src" name="avatar_src">
                                 <input type="hidden" class="avatar-data" name="avatar_data">
+                                <input type="hidden" name="id" value="${user.id}">
                                 <%--<label for="avatarInput">选择图片</label>--%>
                                 <span class="title"><a href="javascript:void(openFileDialog());" class="btn btn-danger" >选择图片</a></span>
                                 <input type="file" class="avatar-input" id="avatarInput" name="avatar_file" style="display:none">
@@ -148,7 +149,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" style="outline:none;">取消</button>
-                        <button type="button" class="btn btn-primary" style="outline:none;" id="uploadSubBtn">确定</button>
+                        <button type="submit" class="btn btn-primary" style="outline:none;" id="uploadSubBtn">确定</button>
                     </div>
                 </form>
             </div>

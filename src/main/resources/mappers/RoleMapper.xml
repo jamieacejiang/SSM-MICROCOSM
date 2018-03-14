@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+    <mapper namespace="dao.RoleDao">
+        <resultMap type="entity.Role" id="roleClassMap">
+            <id column="role_id" property="roleId"></id>
+            <result column="role_name" property="roleName"></result>
+            <result column="sts" property="sts"></result>
+            <result column="create_time" property="createTime"></result>
+            <result column="update_time" property="updateTime"></result>
+        </resultMap>
+
+        <select id="getRoleList" parameterType="string" resultMap="roleClassMap">
+            select role_id,role_name
+            from role
+            where sts='A'
+        </select>
+
+
+    </mapper>

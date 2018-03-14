@@ -6,43 +6,23 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="673ce285-c4b4-4214-b39b-6035aed8d4bd" name="Default" comment="新增role表，进行多表关联查询&#10;学习用mapper.xml进行多表的数据库操作&#10;调整代码规范以及整洁">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SIMS_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SIMS_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_7.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_8_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_1_6_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_3_2_10_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_3_2_10_RELEASE.xml" afterPath="" />
+    <list default="true" id="673ce285-c4b4-4214-b39b-6035aed8d4bd" name="Default" comment="用户登录成功后，点击右上角的修改个人信息，可以进行相应的个人信息的更新，包括上传头像，更新昵称，生日、个性签名、邮箱等修改。">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_3_2_8_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/calculate.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/multiTableController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/dao/RoleDao.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/entity/Role.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/RoleService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/RoleServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/ImageCutUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mappers/RoleMapper.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/multiTableIndex.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SIMS.iml" afterPath="$PROJECT_DIR$/SIMS.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/sqlOperateController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/sqlOperateController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/uploadController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/uploadController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ImageUtil.java" afterPath="$PROJECT_DIR$/src/main/java/util/ImageUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-web.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-web.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editPerMess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/editPerMess.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/multiTableIndex.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/multiTableIndex.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/editPerMess.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/editPerMess.js" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/controller/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/entity/User.class" afterPath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/entity/User.class" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/mappers/UserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/service/UserService.class" afterPath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/service/UserService.class" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/spring-web.xml" afterPath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/spring-web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/util/ImageUtil.class" afterPath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/classes/util/ImageUtil.class" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.7.7.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.7.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-commons-1.8.2.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-jpa-1.6.2.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/lib/spring-orm-3.2.10.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/SIMS-0.0.1-SNAPSHOT/WEB-INF/lib/spring-tx-3.2.10.RELEASE.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/classes/controller/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-web.xml" afterPath="$PROJECT_DIR$/target/classes/spring-web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/ImageUtil.class" afterPath="$PROJECT_DIR$/target/classes/util/ImageUtil.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/User.class" afterPath="$PROJECT_DIR$/target/classes/entity/User.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,30 +55,18 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="132" column="8" lean-forward="true" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+            <state relative-caret-position="0">
+              <caret line="132" column="8" lean-forward="false" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multiTableController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="multiTableController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/multiTableController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="331">
               <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-              <folding>
-                <element signature="e#1455#1461#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,7 +75,7 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
+            <state relative-caret-position="2737">
               <caret line="161" column="115" lean-forward="false" selection-start-line="161" selection-start-column="103" selection-end-line="161" selection-end-column="115" />
               <folding />
             </state>
@@ -320,81 +288,14 @@
               <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIMS" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="SIMS-0.0.1-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,6 +316,116 @@
       <recent name="D:\Documents\eclipseProjects\SIMS\src\main\webapp\css" />
       <recent name="D:\Documents\eclipseProjects\SIMS\src\main\webapp\images" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -800,7 +811,9 @@
       <workItem from="1520212904601" duration="25442000" />
       <workItem from="1520303098567" duration="11931000" />
       <workItem from="1520384545753" duration="18957000" />
-      <workItem from="1520470618944" duration="10595000" />
+      <workItem from="1520470618944" duration="11532000" />
+      <workItem from="1520585916986" duration="592000" />
+      <workItem from="1520988959963" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="1、controller层代码分离,避免单个文件冗长&#10;2、新增修改个人信息页面&#10;3、页面分离,代码复用">
       <created>1517905686115</created>
@@ -823,11 +836,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520241641099</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="用户登录成功后，点击右上角的修改个人信息，可以进行相应的个人信息的更新，包括上传头像，更新昵称，生日、个性签名、邮箱等修改。">
+      <created>1520485895697</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520485895697</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277238000" />
+    <option name="totallyTimeSpent" value="279092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -840,6 +860,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47106108" sideWeight="0.52420574" order="0" side_tool="true" content_ui="tabs" />
@@ -855,7 +876,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5948553" sideWeight="0.47579426" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18327974" sideWeight="0.47579426" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46463022" sideWeight="0.49394855" order="1" side_tool="false" content_ui="tabs" />
@@ -864,7 +884,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905295" sideWeight="0.4969743" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32636657" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2246596" sideWeight="0.49156117" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2246596" sideWeight="0.49156117" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -873,6 +893,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18327974" sideWeight="0.47579426" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32636657" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -880,6 +901,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -914,7 +945,8 @@
     <MESSAGE value="1、controller层代码分离,避免单个文件冗长&#10;2、新增修改个人信息页面&#10;3、页面分离,代码复用" />
     <MESSAGE value="1、新增右上角设置中修改个人信息的功能,简单文本已可修改&#10;2、上传头像，进行裁剪已经完成，格式验证以及后台存储还没有完成" />
     <MESSAGE value="新增role表，进行多表关联查询&#10;学习用mapper.xml进行多表的数据库操作&#10;调整代码规范以及整洁" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增role表，进行多表关联查询&#10;学习用mapper.xml进行多表的数据库操作&#10;调整代码规范以及整洁" />
+    <MESSAGE value="用户登录成功后，点击右上角的修改个人信息，可以进行相应的个人信息的更新，包括上传头像，更新昵称，生日、个性签名、邮箱等修改。" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户登录成功后，点击右上角的修改个人信息，可以进行相应的个人信息的更新，包括上传头像，更新昵称，生日、个性签名、邮箱等修改。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -926,13 +958,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/chinaMap.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="48" lean-forward="true" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bottom.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1066,7 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,7 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="81" column="59" lean-forward="false" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,7 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="85" column="29" lean-forward="false" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,7 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="78" column="33" lean-forward="true" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,9 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1520239039947" expanded="true" signature="707:779" ph="select role_... role" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1178,7 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="158" column="21" lean-forward="true" selection-start-line="153" selection-start-column="8" selection-end-line="158" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,9 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612">
           <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1211,13 +1225,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
+        <state relative-caret-position="2737">
           <caret line="161" column="115" lean-forward="false" selection-start-line="161" selection-start-column="103" selection-end-line="161" selection-end-column="115" />
           <folding />
         </state>
@@ -1227,7 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1235,9 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1245,9 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="479" column="61" lean-forward="false" selection-start-line="479" selection-start-column="38" selection-end-line="479" selection-end-column="61" />
-          <folding>
-            <marker date="1520478500304" expanded="true" signature="14853:14860" ph="×" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1255,12 +1261,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1387">
           <caret line="142" column="29" lean-forward="false" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
-          <folding>
-            <element signature="e#1877#1878#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1944#1945#0" expanded="true" />
-            <element signature="e#1975#1976#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1268,17 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#1;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#2;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#3;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#4;n#mapper#0;n#!!top" expanded="false" />
-            <element signature="n#select#5;n#mapper#0;n#!!top" expanded="false" />
-            <marker date="1520480730149" expanded="true" signature="1545:2683" ph="update user... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1286,17 +1275,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="124" column="33" lean-forward="false" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
-          <folding>
-            <element signature="n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="132" column="8" lean-forward="true" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="132" column="8" lean-forward="false" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1305,16 +1309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-          <folding>
-            <element signature="e#1455#1461#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding />
         </state>
       </provider>
